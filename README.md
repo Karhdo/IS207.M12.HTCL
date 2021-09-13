@@ -23,8 +23,8 @@
 
 ## QUÁ TRÌNH
 ### Week 1: Tổng quan về lập trình Web
-   1. [Công cụ và môi trường pháp triển](Week_1/Chương 1c Công_cụ_và_môi_trường_phát triển.pdf)
-   2. [PHP và Ứng dụng](Week_1/Chương 1d PHP_và_Ứng_dụng.pdf)
+   1. [Công cụ và môi trường pháp triển](https://github.com/trong-khanh-1109/IS207.M12.HTCL/blob/d3fe5013297d8d378d439e6d166dd61440ddf491/Week_1/Chu%CC%9Bo%CC%9Bng%201c%20Co%CC%82ng_cu%CC%A3_va%CC%80_mo%CC%82i_tru%CC%9Bo%CC%9B%CC%80ng_pha%CC%81t%20trie%CC%82%CC%89n.pdf)
+   2. [PHP và Ứng dụng](https://github.com/trong-khanh-1109/IS207.M12.HTCL/blob/0ce9c8af9eeffa6480338e64b1b1624dc669dc19/Week_1/Chu%CC%9Bo%CC%9Bng%201d%20PHP_va%CC%80_U%CC%9B%CC%81ng_du%CC%A3ng.pdf)
 ### Week 2: HTML
 
 <!-- Footer -->
