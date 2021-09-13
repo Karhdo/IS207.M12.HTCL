@@ -22,6 +22,10 @@
 * **Giảng viên**: ThS.Mai Xuân Hùng
 
 ## QUÁ TRÌNH
+### Week 1: Tổng quan về lập trình Web
+   1. [Công cụ và môi trường pháp triển](Week_1/Chương 1c Công_cụ_và_môi_trường_phát triển.pdf)
+   2. [PHP và Ứng dụng](Week_1/Chương 1d PHP_và_Ứng_dụng.pdf)
+### Week 2: HTML
 
 <!-- Footer -->
 <p align="center">© Copyright by Đỗ Trọng Khánh</p>
