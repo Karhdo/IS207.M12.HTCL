@@ -28,4 +28,4 @@
 ### Week 2: HTML
 
 <!-- Footer -->
-<p align="center">© Copyright by Đỗ Trọng Khánh</p>
+<p align="center"><font size='1'>© Copyright by Đỗ Trọng Khánh</font></p>
