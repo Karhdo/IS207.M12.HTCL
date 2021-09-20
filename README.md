@@ -33,6 +33,6 @@
 ### Week 3: CSS and Boostrap
   1. [CSS 3]().
   2. [Boostrap]().
-  3. Assignment Lab 01: [Bài tập thực hành 1]().
+  3. [Assignment Lab 01]().
 <!-- Footer -->
 <p align="center">© Copyright by Đỗ Trọng Khánh</p>
