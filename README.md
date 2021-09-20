@@ -31,8 +31,8 @@
   2. [Web - HTML5](https://github.com/trong-khanh-1109/IS207.M12.HTCL/blob/6756fb3157094ec873480faf89e64b15f9311fda/Week_2/Chu%CC%9Bo%CC%9Bng%202%20Web-HTML5.pdf)
 
 ### Week 3: CSS and Boostrap
-  1. [CSS 3]()&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;3. [Assignment Lab 01]()
-  2. [Boostrap]()
+  1. [CSS 3](https://github.com/trong-khanh-1109/IS207.M12.HTCL/blob/dbc3f5eb3f577b38eefe5d032c02f0a2888ed239/Week_3/Chu%CC%9Bo%CC%9Bng%202%20CSS3.pdf)&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;3. [Assignment Lab 01]()
+  2. [Boostrap](https://github.com/trong-khanh-1109/IS207.M12.HTCL/blob/dbc3f5eb3f577b38eefe5d032c02f0a2888ed239/Week_3/Chu%CC%9Bo%CC%9Bng%202%20Bootstrap.pdf)
 
 <!-- Footer -->
 <p align="center">© Copyright by Đỗ Trọng Khánh</p>
