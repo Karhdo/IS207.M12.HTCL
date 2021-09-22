@@ -24,7 +24,5 @@
 ## QUÁ TRÌNH
 ### Assignment 1: Lập trình web tĩnh HTML5 và CSS3
   - Thư mục: [Lab 01.](/Lab_01)
-  - Ngôn ngữ: HTML, CSS.
-  - Thời gian hoàn thành: 2 tuần.
 <!-- Footer -->
 <p align="center">© Copyright by Đỗ Trọng Khánh</p>
