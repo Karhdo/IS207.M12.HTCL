@@ -23,6 +23,6 @@
 
 ## QUÁ TRÌNH
 ### Assignment 1: Lập trình web tĩnh HTML5 và CSS3
-  - Thư mục: [Lab 01.](IS207.M12.HTCL/Lab_01)
+  - Thư mục: [Lab 01.](/Lab_01)
 <!-- Footer -->
 <p align="center">© Copyright by Đỗ Trọng Khánh</p>
