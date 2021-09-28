@@ -1,0 +1,32 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --white-color: #fff;
+    --primary-color: #18991e;
+    --text-color: #858682;
+    --border-color: #ccc;
+    --button-color: linear-gradient(180deg, #2dc737, #209a28);
+}
+
+.text-upper {
+    text-transform: uppercase;
+}
+
+.text-primary {
+    color: #1e8b25 !important;
+}
+
+.text-sample {
+    color: #7c7872;
+    font-size: 15px;
+    line-height: 24px;
+}
