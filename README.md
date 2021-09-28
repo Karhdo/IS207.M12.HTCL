@@ -24,5 +24,6 @@
 ## QUÁ TRÌNH
 ### Assignment 1: Lập trình web tĩnh HTML5 và CSS3
   - Thư mục: [Lab 01.](/Lab_01)
+<img src='https://github.com/trong-khanh-1109/IS207.M12.HTCL/blob/28a2c7946fce450a8644bb4f355420f6b429be03/Image/Web_Nature_Tour.png' height='400'>
 <!-- Footer -->
 <p align="center">© Copyright by Đỗ Trọng Khánh</p>
