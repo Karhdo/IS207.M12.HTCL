@@ -30,3 +30,23 @@ html {
     font-size: 15px;
     line-height: 24px;
 }
+
+.font-15{
+    font-size: 15px;
+}
+
+.mt-16{
+    margin-top: 16px;
+}
+
+.mb-4{
+    margin-bottom: 4px;
+}
+
+.w-60{
+    width: 60%;
+}
+
+.w-100{
+    width: 100%;
+}

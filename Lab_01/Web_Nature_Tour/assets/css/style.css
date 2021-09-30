@@ -382,6 +382,8 @@
     line-height: 24px;
 }
 
+/* Sidebar */
+
 .wrapper__primary-sidebar {
     float: right;
     width: 25%;
@@ -391,15 +393,15 @@
     height: 100%;
 }
 
-.holiday-search {
+.sidebar__holiday-search {
     padding: 20px;
 }
 
-.header-holiday-search-second {
+.sidebar__header p{
     margin-top: 5px;
 }
 
-.holiday-search-form-select {
+.form__holiday-search {
     display: block;
     width: 100%;
     height: 30px;
@@ -409,28 +411,16 @@
     margin-top: 20px;
     -webkit-appearance: none;
     padding-left: 5px;
-}
-
-.holiday-search-form-select:hover {
     cursor: pointer;
 }
 
-.form-text-first {
-    margin-top: 20px;
-    font-size: 15px;
-    padding: 5px;
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid var(--border-color);
-}
-
-.holiday-search-button {
+.sidebar__holiday-search-button {
     position: relative;
     width: 90%;
     z-index: 2;
 }
 
-.holiday-search-button::after {
+.sidebar__holiday-search-button::after {
     position: absolute;
     content: "";
     right: -15px;
@@ -444,7 +434,7 @@
     cursor: pointer;
 }
 
-.holiday-search-button-a {
+.btn__holiday-search {
     padding: 10px;
     height: 41.5px;
     background-image: var(--button-color);
@@ -458,26 +448,25 @@
     line-height: 22px;
 }
 
-.holiday-search-icon {
-    margin-left: 20px;
-}
-
-.holiday-search-button-icon {
+.icon__holiday-search-button {
     position: absolute;
     top: 12px;
     right: 30px;
 }
 
-.quick-search {
-    padding: 0 25px 25px;
+.icon__holiday-search-button i{
+    margin-left: 20px;
+}
+
+.sidebar__quick-search {
+    padding: 25px;
     border-bottom: 1px solid var(--border-color);
 }
 
-.form-text-second {
+.form-text{
     margin-top: 20px;
     font-size: 15px;
     padding: 5px;
-    width: 60%;
     border-radius: 5px;
     border: 1px solid var(--border-color);
 }
@@ -492,7 +481,7 @@
     border-radius: 5px;
 }
 
-.newsletter-signup {
+.sidebar__newsletter-signup {
     padding: 20px;
     border-bottom: 1px solid var(--border-color);
 }
@@ -501,35 +490,27 @@
     width: 100%;
 }
 
-.lastest-news {
+.sidebar__lastest-news {
     padding: 20px;
 }
 
-.latest-news-para-first {
+.para__latest-news-first {
     margin-top: 15px;
 }
 
-.latest-news-para {
+.para__latest-news {
     margin-top: 20px;
 }
 
-.latest-news-para-header {
+.para__latest-news-header {
     text-decoration: none;
     color: #000;
 }
 
-.latest-news-para-header h5 {
-    font-size: 15px;
-    margin-bottom: 4px;
-}
-
-.latest-news-para-header:hover h5 {
+.para__latest-news-header:hover h5 {
     color: var(--primary-color);
 }
 
-.latest-news-para-body {
-    font-size: 15px;
-}
 
 /* Footer */
 .pt-8 {
