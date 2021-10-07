@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <script src="./jquery-3.5.1.min.js"></script>
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div class="buy-tickets">
+            <table class="buy-tickets__table">
+                <tr>
+                    <th colspan="2">Mua vé</th>
+                </tr>
+                <tr>
+                    <td>Ngày chiếu</td>
+                    <td>
+                        <input type="date" id="show-date" name="show-date" placeholder="dd-mm-yyyy" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phim</td>
+                    <td>
+                        <select name="" id="movie-name">
+                            <option value="">Phim</option>
+                            <option value="">Yêu em bất chấp</option>
+                            <option value="">Tháng năm rực rỡ</option>
+                            <option value="">Và em sẽ đến</option>
+                            <option value="">Chuyện ma lúc 3 giờ sáng</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Xuất chiếu</td>
+                    <td>
+                        <select name="showtime" id="showtime">
+                            <option value="">Xuất chiếu</option>
+                            <option value="45000">9h – 12h</option>
+                            <option value="45000">13h – 16h</option>
+                            <option value="55000">17h – 20h</option>
+                            <option value="35000">22h – 2h</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phòng chiếu</td>
+                    <td>
+                        <select name="room" id="room">
+                            <option value="">Phòng chiếu</option>
+                            <option value="1">Đồng</option>
+                            <option value="1.2">Bạc</option>
+                            <option value="1.5">Vàng</option>
+                            <option value="2.0">Kim cương</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Chọn chỗ ngồi</td>
+                    <td>
+                        <select name="seat-number" id="seat-number" multiple>
+                            <option value="">Ghế 01</option>
+                            <option value="">Ghế 02</option>
+                            <option value="">Ghế 03</option>
+                            <option value="">Ghế 04</option>
+                            <option value="">Ghế 05</option>
+                            <option value="">Ghế 07</option>
+                            <option value="">Ghế 08</option>
+                            <option value="">Ghế 09</option>
+                            <option value="">Ghế 10</option>
+                            <option value="">Ghế 11</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <button class="buy-tickets__table-btn">Mua vé</button>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div class="receipt">
+            <h4 class="receipt__header">Thông tin vé</h4>
+            <p>Khách hành <span style="margin-left: 150px">Đỗ Trọng Khánh</span></p>
+            <p>
+                Ngày chiếu
+                <span style="margin-left: 153px" class="receipt__show-date"></span>
+            </p>
+            <p>
+                Phim
+                <span style="margin-left: 203px" class="receipt__movie-name"></span>
+            </p>
+            <p>
+                Suất chiếu
+                <span style="margin-left: 162px" class="receipt__showtime"></span>
+            </p>
+            <p>
+                Phòng chiếu
+                <span style="margin-left: 148px" class="receipt__room"></span>
+            </p>
+            <table class="receipt__table">
+                <tr class="receipt__table-header" style="font-weight: 600">
+                    <td>Ghế</td>
+                    <td>Giá Vé</td>
+                </tr>
+                <tr class="receipt__table-total" style="font-weight: 600">
+                    <td>Tổng tiền</td>
+                    <td class="receipt__total"></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+    <script src="./main.js"></script>
+</html>
