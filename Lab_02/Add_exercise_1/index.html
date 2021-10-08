@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <script src="./jquery-3.5.1.min.js"></script>
+        <title>Calculator</title>
+    </head>
+    <body>
+        <div class="main">
+            <div class="calc">
+                <div class="calc-form">
+                    <form name="form" class="calc-form-display">
+                        <input type="text" class="calc-display" />
+                    </form>
+                    <form name="form" class="calc-form-results">
+                        <input type="text" class="results-display" />
+                    </form>
+                </div>
+                <table>
+                    <tr>
+                        <td><input type="button" value="CE" onclick="clearDisplay()" style="background-color: #eb4648" /></td>
+                        <td><input type="button" value="Del" onclick="delDisplay()" style="background-color: #fbab33" /></td>
+                        <td><input type="button" value="+" onclick="insertNumber('+')" style="background-color: #28bc4e" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="-" onclick="insertNumber('-')" style="background-color: #28bc4e" /></td>
+                        <td><input type="button" value="*" onclick="insertNumber('*')" style="background-color: #28bc4e" /></td>
+                        <td><input type="button" value="/" onclick="insertNumber('/')" style="background-color: #28bc4e" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="9" onclick="insertNumber(9)" style="background-color: #1e8bd0" /></td>
+                        <td><input type="button" value="8" onclick="insertNumber(8)" style="background-color: #1e8bd0" /></td>
+                        <td><input type="button" value="7" onclick="insertNumber(7)" style="background-color: #1e8bd0" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="6" onclick="insertNumber(6)" style="background-color: #1e8bd0" /></td>
+                        <td><input type="button" value="5" onclick="insertNumber(5)" style="background-color: #1e8bd0" /></td>
+                        <td><input type="button" value="4" onclick="insertNumber(4)" style="background-color: #1e8bd0" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="3" onclick="insertNumber(3)" style="background-color: #1e8bd0" /></td>
+                        <td><input type="button" value="2" onclick="insertNumber(2)" style="background-color: #1e8bd0" /></td>
+                        <td><input type="button" value="1" onclick="insertNumber(1)" style="background-color: #1e8bd0" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="0" onclick="insertNumber(0)" style="background-color: #1e8bd0" /></td>
+                        <td><input type="button" value="." onclick="insertNumber('.')" style="background-color: #1fc2e2" /></td>
+                        <td><input type="button" value="=" onclick="equal()" style="background-color: #1fc2e2" /></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+    <script>
+        function insertNumber(num) {
+            $(".calc-display").val($(".calc-display").val() + num);
+        }
+
+        function equal() {
+            $(".results-display").val(eval($(".calc-display").val()));
+        }
+
+        function clearDisplay() {
+            $(".calc-display").val("");
+            $(".results-display").val("");
+        }
+
+        function delDisplay() {
+            var value = $(".calc-display").val();
+            $(".calc-display").val(value.substring(0, value.length - 1));
+        }
+    </script>
+</html>
