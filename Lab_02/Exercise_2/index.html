@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <title>Document</title>
     </head>
 
@@ -53,7 +54,7 @@
                 </tr>
                 <tr>
                     <td colspan="3" align="center">
-                        <button class="btn-calc" onclick="calcHD()">Tính tiền</button>
+                        <button class="btn-calc">Tính tiền</button>
                     </td>
                 </tr>
             </table>
@@ -61,52 +62,46 @@
         <div class="table-hd">
             <table id="table-hoahon">
                 <tr align="center" style="color: blue">
-                    <td width="60%">Các món đã dùng</td>
-                    <td width="40%">Tiền</td>
+                    <th width="60%">Các món đã dùng</th>
+                    <th width="40%">Tiền</th>
                 </tr>
             </table>
         </div>
-        <script>
-            function calcHD() {
-                var food = document.getElementById("food").children,
-                    drink = document.getElementById("drink").children,
-                    day = document.getElementsByName("day");
-                var listName = [],
-                    listPrice = [],
-                    checkDay = day[0].checked ? "day" : "night",
-                    totalPrice = 0;
-
-                for (var i = 0; i < food.length; i++) {
-                    if (food[i].selected) {
-                        listName.push(food[i].textContent);
-                        listPrice.push(food[i].value);
-                    }
-                }
-
-                for (var i = 0; i < drink.length; i++) {
-                    if (drink[i].selected) {
-                        listName.push(drink[i].textContent);
-                        listPrice.push(drink[i].value);
-                    }
-                }
-                for (var i = 0; i < listName.length; i++) {
-                    var x = document.getElementById("table-hoahon").insertRow(i + 1);
-                    var c1 = x.insertCell(0);
-                    var c2 = x.insertCell(1);
-                    c1.innerHTML = listName[i];
-                    c2.innerHTML = listPrice[i];
-                    totalPrice += Number(listPrice[i]);
-                }
-
-                var x = document.getElementById("table-hoahon").insertRow(listName.length + 1);
-                var c1 = x.insertCell(0);
-                var c2 = x.insertCell(1);
-                c1.innerHTML = "Tổng tiền";
-                if (checkDay == "night") {
-                    totalPrice += totalPrice * 0.1;
-                }
-                c2.innerHTML = totalPrice + " đồng";
-            }
-        </script>
     </body>
+    <script>
+        $(".btn-calc").click(function () {
+            var day = $('input[name="day"]')[0].checked ? "day" : "night";
+            var food = $("#food"),
+                dirk = $("#drink"),
+                table = $("#table-hoahon");
+            food.children().each(function () {
+                if ($(this)[0].selected) {
+                    var str = "<tr><td>" + $(this)[0].text + "</td>";
+                    str += "<td>" + $(this)[0].value + "</td></tr>";
+                    table.append(str);
+                }
+            });
+
+            dirk.children().each(function () {
+                if ($(this)[0].selected) {
+                    var str = "<tr><td>" + $(this)[0].text + "</td>";
+                    str += "<td>" + $(this)[0].value + "</td></tr>";
+                    table.append(str);
+                }
+            });
+
+            var totalMoney = 0;
+            table.find("tr").each(function (index) {
+                if (index >= 1) {
+                    totalMoney += Number($(this).find("td").eq(1).html());
+                }
+            });
+
+            if (day === "night") {
+                totalMoney = totalMoney + totalMoney * 0.1;
+            }
+            table.append("<tr><td>Tổng tiền</td>" + "<td>" + totalMoney + " đ</td></tr>");
+            table.show();
+        });
+    </script>
 </html>
