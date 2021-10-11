@@ -1,5 +1,6 @@
 table,
-td {
+td,
+th {
     font-size: 18px;
     line-height: 30px;
     font-weight: 600;
@@ -47,4 +48,9 @@ table {
 
 #table-hoahon {
     background-color: #80ffff;
+    display: none;
+}
+
+#table-hoahon td {
+    padding-left: 12px;
 }
