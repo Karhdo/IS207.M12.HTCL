@@ -1,0 +1,111 @@
+body {
+    box-sizing: border-box;
+}
+
+h3 {
+    margin: 0;
+}
+
+table,
+td,
+th {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 600;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+}
+
+#seat,
+#food {
+    margin: 0 24px 120px;
+    font-size: 14px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+.menu__table {
+    width: 50%;
+}
+
+.table__chosse-header {
+    font-size: 12px;
+    color: #cccc99;
+    background-color: #0033cc;
+}
+
+.receipt {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.receipt__table {
+    width: 80%;
+}
+
+.receipt-meal {
+    width: 100%;
+}
+
+input {
+    width: 50px;
+    text-align: center;
+    font-size: 18px;
+    outline: none;
+    border: none;
+}
+
+.print-receipt {
+    border: 1px solid black;
+    padding: 12px;
+    margin: 24px 470px;
+    width: 450px;
+    font-size: 18px;
+    display: none;
+}
+
+.print-receipt p {
+    margin: 12px;
+}
+
+.print-receipt__header {
+    text-align: center;
+    font-size: 20px;
+}
+
+.print-receipt__day {
+    margin-left: 100px;
+}
+
+.print-receipt__name {
+    margin-left: 128px;
+}
+
+.print-receipt__seat {
+    margin-left: 174px;
+}
+
+.print-receipt__tbl {
+    width: 300px;
+    margin: 0 50px;
+    border: none;
+}
+
+.print-receipt__tbl th,
+.print-receipt__tbl td {
+    border: none;
+}
+
+.print-receipt__tbl td {
+    text-align: center;
+    font-weight: 400;
+}
+
+.print-receipt__tbl-total {
+    padding-left: 70px;
+}

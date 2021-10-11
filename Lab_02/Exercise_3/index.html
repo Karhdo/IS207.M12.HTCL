@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Document</title>
+    </head>
+
+    <body>
+        <!-- Menu -->
+        <div class="menu">
+            <table class="menu__table">
+                <tr>
+                    <td class="menu__table-day"></td>
+                    <td>Nhân viên: <span class="menu__table-name">Đỗ Trọng Khánh</span></td>
+                </tr>
+                <tr>
+                    <th colspan="3"><h3>THỰC ĐƠN</h3></th>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center" style="height: 250px">
+                        <table class="table__chosse">
+                            <tr class="table__chosse-header">
+                                <th>Bàn</th>
+                                <th>Món ăn</th>
+                            </tr>
+                            <tr>
+                                <td style="width: 100px">
+                                    <select name="seat" id="seat">
+                                        <option value="Bàn 1">Bàn 1</option>
+                                        <option value="Bàn 2">Bàn 2</option>
+                                        <option value="Bàn 3">Bàn 3</option>
+                                    </select>
+                                </td>
+                                <td style="width: 150px">
+                                    <select name="foood" id="food">
+                                        <option value="20000">Bún bò</option>
+                                        <option value="18000">Hủ tiếu</option>
+                                        <option value="17000">Bánh canh</option>
+                                        <option value="19000">Phở bò</option>
+                                        <option value="15000">Nuôi</option>
+                                        <option value="12000">Bánh mì thịt</option>
+                                        <option value="15000">Bánh cuốn</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--Receipt -->
+        <div class="receipt">
+            <table class="receipt__table">
+                <tr>
+                    <th>Bàn 1</th>
+                    <th>Bàn 2</th>
+                    <th>Bàn 3</th>
+                </tr>
+                <tr>
+                    <th>
+                        <table align="center" class="receipt-meal receipt-meal-1">
+                            <tr>
+                                <th>Món</th>
+                                <th>SL</th>
+                                <th>Tiền</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th>Tổng tiền</th>
+                                <th class="total-money total-money-1" colspan="3">0</th>
+                            </tr>
+                        </table>
+                        <button class="btn-print" name="Số 1">In hoá đơn</button>
+                    </th>
+                    <th>
+                        <table align="center" class="receipt-meal receipt-meal-2">
+                            <tr>
+                                <th>Món</th>
+                                <th>SL</th>
+                                <th>Tiền</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th>Tổng tiền</th>
+                                <th class="total-money total-money-2" colspan="3">0</th>
+                            </tr>
+                        </table>
+                        <button class="btn-print" name="Số 2">In hoá đơn</button>
+                    </th>
+                    <th>
+                        <table align="center" class="receipt-meal receipt-meal-3">
+                            <tr>
+                                <th>Món</th>
+                                <th>SL</th>
+                                <th>Tiền</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th>Tổng tiền</th>
+                                <th class="total-money total-money-3" colspan="3">0</th>
+                            </tr>
+                        </table>
+                        <button class="btn-print" name="Số 3">In hoá đơn</button>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div class="print-receipt">
+            <h3 class="print-receipt__header">Hoá đơn</h3>
+            <p>Ngày hoá đơn: <span class="print-receipt__day"></span></p>
+            <p>Nhân viên: <span class="print-receipt__name"></span></p>
+            <p>Bàn: <span class="print-receipt__seat"></span></p>
+            <table class="print-receipt__tbl">
+                <tr>
+                    <th>Món</th>
+                    <th>SL</th>
+                    <th>Thành tiền</th>
+                </tr>
+                <tr>
+                    <th>Tổng tiền</th>
+                    <th colspan="2" class="print-receipt__tbl-total"></th>
+                </tr>
+            </table>
+        </div>
+    </body>
+    <script>
+        function getDateTime() {
+            var today = new Date(),
+                current_day = today.getDay() + 1 != 1 ? "Thứ " + String(today.getDay() + 1) : "Chủ Nhật",
+                dd = String(today.getDate()).padStart(2, "0"),
+                mm = String(today.getMonth() + 1).padStart(2, "0"),
+                yyyy = today.getFullYear(),
+                hours = today.getHours(),
+                minutes = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes();
+
+            today = current_day + ", " + mm + "/" + dd + "/" + yyyy + ", " + hours + ":" + minutes;
+            return today;
+        }
+
+        $(".menu__table-day").html(getDateTime());
+
+        //Lấy giá trị thẻ selected seatNumber
+        var seatNumber;
+        $("#seat").change(function () {
+            seatNumber = $("#seat").val();
+        });
+
+        function addFood(name, money) {
+            str = "<tr class='foodName'><td class='foodName-name'>" + name + "</td>";
+            str += "<td><input class = 'qnt' value='1'></td>";
+            str += "<td><input class='foodMoney' value=" + money + ">" + "</td><td>";
+            str += "<button class = 'btn-del'> Xoá </button></tr>";
+            return str;
+        }
+
+        // Hàm cập nhập số lượng mà tiền khi món ăn giống nhau
+        function updateQnt(food, money) {
+            var valueQnt = food.children[1].children[0], // Lấy element input chứ số lượng
+                valueMoney = food.children[2].children[0]; // Lấy element input chứ tiền
+            valueQnt.value = Number(valueQnt.value) + 1; // Update quantity
+            valueMoney.value = Number(valueMoney.value) + Number(money); // Update money
+        }
+
+        $("#food").on("change", function () {
+            var foodName = $("#food :selected").text(),
+                foodMoney = $("#food").val(),
+                listFood_1 = $(".receipt-meal-1 .foodName"),
+                listFood_2 = $(".receipt-meal-2 .foodName"),
+                listFood_3 = $(".receipt-meal-2 .foodName");
+            if (seatNumber == "Bàn 1") {
+                var flag = 0; // Biến cờ để báo hiệu có món giống nhau
+                if (listFood_1.length != 0) {
+                    for (var i = 0; i < listFood_1.length; i++) {
+                        if (listFood_1[i].children[0].textContent == foodName) {
+                            updateQnt(listFood_1[i], foodMoney);
+                            $(".total-money-1").text(Number($(".total-money-1").text()) + Number(foodMoney));
+                            flag = 1;
+                        }
+                    }
+                }
+                if (flag == 0 || listFood_1.length == 0) {
+                    $(".receipt-meal-1 tr:last").before(addFood(foodName, foodMoney));
+                    $(".total-money-1").text(Number($(".total-money-1").text()) + Number(foodMoney));
+                }
+            } else if (seatNumber == "Bàn 2") {
+                var flag = 0; // Biến cờ để báo hiệu có món giống nhau
+                if (listFood_2.length != 0) {
+                    for (var i = 0; i < listFood_2.length; i++) {
+                        if (listFood_2[i].children[0].textContent == foodName) {
+                            updateQnt(listFood_2[i], foodMoney);
+                            $(".total-money-2").text(Number($(".total-money-2").text()) + Number(foodMoney));
+                            flag = 1;
+                        }
+                    }
+                }
+                if (flag == 0 || listFood_2.length == 0) {
+                    $(".receipt-meal-2 tr:last").before(addFood(foodName, foodMoney));
+                    $(".total-money-2").text(Number($(".total-money-2").text()) + Number(foodMoney));
+                }
+            } else {
+                var flag = 0; // Biến cờ để báo hiệu có món giống nhau
+                if (listFood_3.length != 0) {
+                    for (var i = 0; i < listFood_3.length; i++) {
+                        if (listFood_3[i].children[0].textContent == foodName) {
+                            updateQnt(listFood_3[i], foodMoney);
+                            $(".total-money-3").text(Number($(".total-money-3").text()) + Number(foodMoney));
+                            flag = 1;
+                        }
+                    }
+                }
+                if (flag == 0 || listFood_3.length == 0) {
+                    $(".receipt-meal-3 tr:last").before(addFood(foodName, foodMoney));
+                    $(".total-money-3").text(Number($(".total-money-3").text()) + Number(foodMoney));
+                }
+            }
+            $(".btn-del").click(function (event) {
+                event.preventDefault();
+                var moneyDel = $(this).parents(".foodName").find(".foodMoney").val(),
+                    newTotalMoney = $(this).parents(".receipt-meal").find(".total-money"),
+                    str = Number(newTotalMoney.text()) - Number(moneyDel);
+                newTotalMoney.text(str);
+                $(this).parent().parent().remove();
+            });
+        });
+
+        function addFoodToReceipt(name, qnt, money) {
+            return "<tr><td>" + name + "</td>" + "<td>" + qnt + "</td>" + "<td>" + money + "</td></tr>";
+        }
+
+        $(".btn-print").click(function (event) {
+            event.preventDefault();
+            $(".print-receipt__day").html(getDateTime());
+            $(".print-receipt__name").html($(".menu__table-name").text());
+            $(".print-receipt__seat").html($(this)[0].name);
+            if ($(this)[0].name == "Số 1") {
+                var listFood = $(".receipt-meal-1 .foodName");
+                listFood.each(function () {
+                    var name = $(this).find(".foodName-name").text(),
+                        money = $(this).find(".foodMoney").val(),
+                        qnt = $(this).find(".qnt").val();
+                    $(".print-receipt__tbl tr:last").before(addFoodToReceipt(name, qnt, money));
+                });
+                $(".print-receipt__tbl-total").text($(".total-money-1").text() + " đ");
+            } else if ($(this)[0].name == "Số 2") {
+                var listFood = $(".receipt-meal-2 .foodName");
+                listFood.each(function () {
+                    var name = $(this).find(".foodName-name").text(),
+                        money = $(this).find(".foodMoney").val(),
+                        qnt = $(this).find(".qnt").val();
+                    $(".print-receipt__tbl tr:last").before(addFoodToReceipt(name, qnt, money));
+                });
+                $(".print-receipt__tbl-total").text($(".total-money-2").text() + " đ");
+            } else {
+                var listFood = $(".receipt-meal-3 .foodName");
+                listFood.each(function () {
+                    var name = $(this).find(".foodName-name").text(),
+                        money = $(this).find(".foodMoney").val(),
+                        qnt = $(this).find(".qnt").val();
+                    $(".print-receipt__tbl tr:last").before(addFoodToReceipt(name, qnt, money));
+                });
+                $(".print-receipt__tbl-total").text($(".total-money-3").text() + " đ");
+            }
+            $(".print-receipt").show();
+        });
+    </script>
+</html>
