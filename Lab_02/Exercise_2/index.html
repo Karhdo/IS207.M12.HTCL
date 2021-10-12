@@ -46,9 +46,9 @@
                         </select>
                     </td>
                     <td>
-                        <input type="radio" name="day" id="morning" />
+                        <input type="radio" name="day" id="morning" value="1" />
                         <label for="morning">Ban ngày</label><br />
-                        <input type="radio" name="day" id="dinner" />
+                        <input type="radio" name="day" id="dinner" value="2" />
                         <label for="dinner">Ban đêm</label><br />
                     </td>
                 </tr>
@@ -70,7 +70,7 @@
     </body>
     <script>
         $(".btn-calc").click(function () {
-            var day = $('input[name="day"]')[0].checked ? "day" : "night";
+            var day = $("input[name = day]:checked").val();
             var food = $("#food option:selected"),
                 dirk = $("#drink option:selected"),
                 table = $("#table-hoahon");
@@ -94,7 +94,7 @@
                 }
             });
 
-            if (day === "night") {
+            if (day == 2) {
                 totalMoney = totalMoney + totalMoney * 0.1;
             }
             table.append("<tr><td>Tổng tiền</td>" + "<td>" + totalMoney + " đ</td></tr>");
