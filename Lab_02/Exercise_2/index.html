@@ -71,23 +71,20 @@
     <script>
         $(".btn-calc").click(function () {
             var day = $('input[name="day"]')[0].checked ? "day" : "night";
-            var food = $("#food"),
-                dirk = $("#drink"),
+            var food = $("#food option:selected"),
+                dirk = $("#drink option:selected"),
                 table = $("#table-hoahon");
-            food.children().each(function () {
-                if ($(this)[0].selected) {
-                    var str = "<tr><td>" + $(this)[0].text + "</td>";
-                    str += "<td>" + $(this)[0].value + "</td></tr>";
-                    table.append(str);
-                }
+
+            food.each(function (index) {
+                var str = "<tr><td>" + $(this).text() + "</td>";
+                str += "<td>" + $(this).val() + "</td></tr>";
+                table.append(str);
             });
 
-            dirk.children().each(function () {
-                if ($(this)[0].selected) {
-                    var str = "<tr><td>" + $(this)[0].text + "</td>";
-                    str += "<td>" + $(this)[0].value + "</td></tr>";
-                    table.append(str);
-                }
+            dirk.each(function () {
+                var str = "<tr><td>" + $(this).text() + "</td>";
+                str += "<td>" + $(this).val() + "</td></tr>";
+                table.append(str);
             });
 
             var totalMoney = 0;
