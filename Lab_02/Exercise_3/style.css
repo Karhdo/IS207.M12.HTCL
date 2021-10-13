@@ -63,10 +63,13 @@ input {
 .print-receipt {
     border: 1px solid black;
     padding: 12px;
-    margin: 24px 470px;
+    margin: 150px 470px;
     width: 450px;
     font-size: 18px;
-    display: none;
+}
+
+.print-total-money {
+    padding-left: 70px;
 }
 
 .print-receipt p {
