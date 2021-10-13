@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="receipt">
+            <h4 class="receipt__header">Thông tin vé</h4>
+            <p>Khách hành <span style="margin-left: 150px">Đỗ Trọng Khánh</span></p>
+            <p>
+                Ngày chiếu
+                <span style="margin-left: 153px" class="receipt__show-date"></span>
+            </p>
+            <p>
+                Phim
+                <span style="margin-left: 203px" class="receipt__movie-name"></span>
+            </p>
+            <p>
+                Suất chiếu
+                <span style="margin-left: 162px" class="receipt__showtime"></span>
+            </p>
+            <p>
+                Phòng chiếu
+                <span style="margin-left: 148px" class="receipt__room"></span>
+            </p>
+            <table class="receipt__table">
+                <tr class="receipt__table-header" style="font-weight: 600">
+                    <td>Ghế</td>
+                    <td>Giá Vé</td>
+                </tr>
+                <tr class="receipt__table-total" style="font-weight: 600">
+                    <td>Tổng tiền</td>
+                    <td class="receipt__total"></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+    <script>
+        $(".receipt__show-date").html(localStorage.getItem("date"));
+        $(".receipt__movie-name").html(localStorage.getItem("movieName"));
+        $(".receipt__showtime").html(localStorage.getItem("showTime"));
+        $(".receipt__room").html(localStorage.getItem("room"));
+        $(".receipt__table tr:last").before(localStorage.getItem("seatNumber"));
+        $(".receipt__total").html(localStorage.getItem("totalMoney") + " đ");
+    </script>
+</html>
