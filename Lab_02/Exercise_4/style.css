@@ -19,6 +19,7 @@ th {
 .buy-tickets {
     display: flex;
     justify-content: center;
+    margin-top: 200px;
 }
 
 .buy-tickets__table {
@@ -38,8 +39,7 @@ select {
 .receipt {
     border: 1px solid black;
     width: 35%;
-    margin: 8px 455px 0;
-    display: none;
+    margin: 100px 455px 0;
 }
 
 .receipt__header,
