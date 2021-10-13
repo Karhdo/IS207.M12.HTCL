@@ -81,36 +81,6 @@
                 </tr>
             </table>
         </div>
-        <div class="receipt">
-            <h4 class="receipt__header">Thông tin vé</h4>
-            <p>Khách hành <span style="margin-left: 150px">Đỗ Trọng Khánh</span></p>
-            <p>
-                Ngày chiếu
-                <span style="margin-left: 153px" class="receipt__show-date"></span>
-            </p>
-            <p>
-                Phim
-                <span style="margin-left: 203px" class="receipt__movie-name"></span>
-            </p>
-            <p>
-                Suất chiếu
-                <span style="margin-left: 162px" class="receipt__showtime"></span>
-            </p>
-            <p>
-                Phòng chiếu
-                <span style="margin-left: 148px" class="receipt__room"></span>
-            </p>
-            <table class="receipt__table">
-                <tr class="receipt__table-header" style="font-weight: 600">
-                    <td>Ghế</td>
-                    <td>Giá Vé</td>
-                </tr>
-                <tr class="receipt__table-total" style="font-weight: 600">
-                    <td>Tổng tiền</td>
-                    <td class="receipt__total"></td>
-                </tr>
-            </table>
-        </div>
     </body>
     <script>
         var showDate, movieName, showTime, price, room, roomValue;
@@ -146,19 +116,21 @@
         });
 
         $(".buy-tickets__table-btn").click(function () {
-            $(".receipt").show();
-            $(".receipt__show-date").html(showDate);
-            $(".receipt__movie-name").html(movieName);
-            $(".receipt__showtime").html(showTime);
-            $(".receipt__room").html(room);
+            localStorage.setItem("date", showDate);
+            localStorage.setItem("movieName", movieName);
+            localStorage.setItem("showTime", showTime);
+            localStorage.setItem("room", room);
             var money = Number(price) * Number(roomValue),
-                totalMoney = money * seatNumber.length;
+                totalMoney = money * seatNumber.length,
+                str;
             for (var seat of seatNumber) {
                 htmlSeat = "<td>" + seat + "</td>";
                 htmlMoney = "<td>" + money + " đ" + "</td>";
-                $(".receipt__table tr:last").before("<tr>" + htmlSeat + htmlMoney + "</tr>");
+                str += "<tr>" + htmlSeat + htmlMoney + "</tr>";
             }
-            $(".receipt__total").html(totalMoney + " đ");
+            localStorage.setItem("totalMoney", totalMoney);
+            localStorage.setItem("seatNumber", str);
+            window.location.href = "./ticket_infor.html";
         });
     </script>
 </html>
