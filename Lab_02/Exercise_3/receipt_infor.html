@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <!--Receipt -->
+        <div class="print-receipt">
+            <h3 class="print-receipt__header">Hoá đơn</h3>
+            <p>Ngày hoá đơn: <span class="print-receipt__day"></span></p>
+            <p>Nhân viên: <span class="print-receipt__name"></span></p>
+            <p>Bàn: <span class="print-receipt__seat"></span></p>
+            <table class="print-receipt__tbl">
+                <tr>
+                    <th>Món</th>
+                    <th>SL</th>
+                    <th>Thành tiền</th>
+                </tr>
+            </table>
+        </div>
+    </body>
+    <script>
+        $(".print-receipt__day").html(localStorage.getItem("dateTime"));
+        $(".print-receipt__name").html(localStorage.getItem("staffName"));
+        $(".print-receipt__seat").html(localStorage.getItem("seatNum"));
+        $(".print-receipt__tbl").append(localStorage.getItem("foodList"));
+    </script>
+</html>
