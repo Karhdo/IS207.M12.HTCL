@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div class="cart">
+            <table class="cart-table" style="background-color: #ffedca">
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Đơn giá</th>
+                    <th>Thành tiền</th>
+                    <th>Chức năng</th>
+                </tr>
+                <tr>
+                    <td>IPhone 11 Pro Max 64GB</td>
+                    <td><input type="number" value="0" /></td>
+                    <td><input type="text" /></td>
+                    <td class="money"></td>
+                    <th><button class="btn-del">Xoá</button></th>
+                </tr>
+                <tr>
+                    <td>Samsung Galaxy Note 10+</td>
+                    <td><input type="number" value="0" /></td>
+                    <td><input type="text" /></td>
+                    <td class="money"></td>
+                    <th><button class="btn-del">Xoá</button></th>
+                </tr>
+                <tr>
+                    <td colspan="3">Tổng tiền</td>
+                    <td colspan="2" class="total-money">0</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+    <script>
+        function updateMoney() {
+            var totalMoney = 0;
+            $(".money").each(function () {
+                totalMoney += Number($(this).text());
+            });
+            $(".total-money").html(totalMoney);
+        }
+
+        $("input[type=number]").change(function () {
+            var quantity = $(this).val(),
+                price = $(this).parents("tr").find("input[type=text]").val();
+            $(this)
+                .parents("tr")
+                .find(".money")
+                .html(quantity * price);
+            updateMoney();
+        });
+
+        $("input[type=text]").change(function () {
+            var quantity = $(this).parents("tr").find("input[type=number]").val(),
+                price = $(this).val();
+            $(this)
+                .parents("tr")
+                .find(".money")
+                .html(quantity * price);
+            updateMoney();
+        });
+
+        $(".btn-del").click(function () {
+            $(this).parents("tr").remove();
+            updateMoney();
+        });
+    </script>
+</html>

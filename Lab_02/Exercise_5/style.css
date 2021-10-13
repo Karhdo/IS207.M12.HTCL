@@ -1,0 +1,40 @@
+body {
+    box-sizing: border-box;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    font-weight: 600;
+}
+
+th,
+td {
+    width: 185px;
+    height: 30px;
+}
+
+input {
+    width: 190px;
+    height: 25px;
+}
+
+.cart {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.money,
+.total-money {
+    padding-left: 4px;
+}
+
+.btn-del {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 30px;
+    width: 50px;
+    height: 25px;
+}
