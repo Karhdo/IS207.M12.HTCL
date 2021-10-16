@@ -179,16 +179,16 @@
                 tableReceiptMeal.before(addFood(foodName, foodMoney));
                 totalMoney.text(Number(totalMoney.text()) + Number(foodMoney));
             }
-
-            // Xoá một đồ ăn bất kì trong bàn và cập nhập lại tổng tiền
-            $(".btn-del").click(function (event) {
-                event.preventDefault();
-                var moneyDel = $(this).parents(".foodName").find(".foodMoney").val(),
-                    newTotalMoney = $(this).parents(".receipt-meal").find(".total-money"),
-                    str = Number(newTotalMoney.text()) - Number(moneyDel);
-                newTotalMoney.text(str);
-                $(this).parent().parent().remove();
-            });
+        });
+        
+        // Xoá một đồ ăn bất kì trong bàn và cập nhập lại tổng tiền
+        $(document).on("click", ".btn-del", function (event) {
+            event.preventDefault();
+            var moneyDel = $(this).parents(".foodName").find(".foodMoney").val(),
+                newTotalMoney = $(this).parents(".receipt-meal").find(".total-money"),
+                str = Number(newTotalMoney.text()) - Number(moneyDel);
+            newTotalMoney.text(str);
+            $(this).parent().parent().remove();
         });
 
         //In hoá đơn: Xuất ra thông tin hoá đơn của 1 bàn ở trang Web khác
