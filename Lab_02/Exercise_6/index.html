@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <link rel="stylesheet" href="./main.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="content">
+            <table class="content-table">
+                <th align="top" colspan="3">
+                    <h1>Phiếu đăng ký Tour du lịch</h1>
+                </th>
+                <tr>
+                    <td>Họ và tên Khách</td>
+                    <td><input type="text" id="ClientName"/></td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ</td>
+                    <td><input type="text" id="address"/></td>
+                </tr>
+                <tr>
+                    <td>Điện thoại</td>
+                    <td><input type="text" id="PhoneNumber"/></td>
+                </tr>
+                <tr>
+                    <td>Tour</td>
+                    <td>
+                        <select name="TourName" id="TourName">
+                            <option value="10000000">Hà Nội - Hạ Long - Tuần Châu</option>
+                            <option value="6000000">Hà Nội - Sapa</option>
+                            <option value="3000000">Đà Nẵng - Hội An</option>
+                            <option value="2000000">Buôn Mê Thuộc - Kon Tum</option>
+                            <option value="3500000">TP.HCM - Nha Trang</option>
+                            <option value="2500000">TP.HCM - Cần Thơ - Cà Mau</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="Customer">
+                        Người lớn
+                        <input type="number" id="Adult">
+                        Trẻ em
+                        <input type="number" id="Child">              
+                </tr>
+                <tr>
+                    <td>Ghi chú</td>
+                    <td><input type="text" id="Note" /></td>
+                </tr>
+                <tr>
+                    <th colspan="3">
+                        <button class="Register">
+                            Đăng ký
+                        </button>
+                    </hd>
+                </tr>
+            </table>
+        </div>
+    </body>
+    <script>
+        //Hàm ngày làm hóa đơn
+        function GetDate()
+            {
+                var today=new Date()
+                receipt_day = today.getDay() +1 !=1 ? "Thứ " + String(today.getDay()+1) :"Chủ Nhật";
+                d = String(today.getDate()).padStart(2,"0");
+                m = String(today.getMonth() +1).padStart(2,"0");
+                y = today.getFullYear();
+                h = today.getHours();
+                minute = today.getMinutes()<10 ? "0" + today.getMinutes() : today.getMinutes();
+                today = receipt_day + ", " + m + "/" + d + "/" + y + ", " + h + ":" + minute;
+                return today;
+            }
+        //In hóa đơn ở một trang web khác
+        $(".Register").click(function()
+             {
+                var  TourNumber = $("#TourName option:selected").val();
+                var AdultNumber = $("#Adult").val(),
+                    ChildNumber = $("#Child").val();
+                var AdultVal = AdultNumber * TourNumber;
+                var ChildVal = ChildNumber * TourNumber/2;
+                var TotalVal = AdultVal + ChildVal;
+                        
+                localStorage.setItem("Date",GetDate());
+                localStorage.setItem("StaffName","Phạm Anh Khoa");
+                localStorage.setItem("ClientName", $("#ClientName").val());
+                localStorage.setItem("Address",    $("#address").val());
+                localStorage.setItem("TourName",   $("#TourName option:selected").text());
+                localStorage.setItem("TourVal",    TourNumber);
+                localStorage.setItem("Note",        $("#Note").val());
+                localStorage.setItem("AdultNumber", AdultNumber);
+                localStorage.setItem("AdultVal",    AdultVal);
+                localStorage.setItem("ChildNumber", ChildNumber);
+                localStorage.setItem("ChildVal", ChildVal);
+                localStorage.setItem("TotalVal", TotalVal);
+                window.location.href = 'receipt.html';
+            });
+    </script>
+</html>

@@ -1,0 +1,21 @@
+.Receipt
+{
+    border: 1px solid black;
+    margin: 150px;
+    width: 50%;
+    padding: 50px 5;
+}
+.Receipt-content
+{
+    margin: 50px;
+    padding: auto;
+}
+.Receipt-header
+{
+    text-align: center;
+}
+.Receipt-table
+{
+    padding: 50 px;
+    width: 100%;
+}

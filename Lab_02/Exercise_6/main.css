@@ -1,0 +1,68 @@
+table,td,tr
+{
+    font-size: 18px;
+    line-height: 30px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+td
+{
+    color: blue;
+    width: 50%;
+    margin-left: 5px;
+}
+table
+{
+    background-color: #FFDD99;
+    border: 1px solid black;
+    margin: 10px;
+
+}
+.content
+{
+    border: 1px solid black;
+    width: 40%;
+    background-color: #FFDD99;
+    display: flex;
+    justify-content: center;
+    vertical-align: auto;
+    margin: 200px ;
+}
+.Customer
+{
+    margin: 5px;
+    width: 100%;
+    border: 1px solid #8264b3;
+    display: flex;
+}
+#ClientName, #address, #PhoneNumber, #TourName
+{
+    width: 60%;
+}
+.Number-customer td
+{
+    border: none ;
+}
+#Adult, #Child 
+{
+    margin: 10px;
+    width: 10%;
+}
+#Note
+{
+    width: 100%;
+    padding: 60px 0;
+    margin-right: 0px 0;
+}
+.Register
+{
+    text-align: center;
+    border-radius: 1px;
+    border: 1px solid;
+    font-size: 15px;
+    line-height: 20px;
+    margin: 4px 0;
+}
+
+
