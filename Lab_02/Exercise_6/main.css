@@ -1,62 +1,66 @@
-table,td,tr
-{
+table,
+td,
+tr {
     font-size: 18px;
     line-height: 30px;
     border: 1px solid black;
     border-collapse: collapse;
     padding: 10px;
 }
-td
-{
+td {
     color: blue;
     width: 50%;
     margin-left: 5px;
 }
-table
-{
-    background-color: #FFDD99;
+table {
+    background-color: #ffdd99;
     border: 1px solid black;
     margin: 10px;
-
 }
-.content
-{
+.content {
     border: 1px solid black;
-    width: 40%;
-    background-color: #FFDD99;
+    width: 50%;
+    background-color: #ffdd99;
     display: flex;
     justify-content: center;
-    vertical-align: auto;
-    margin: 200px ;
+    margin: 100px 400px;
 }
-.Customer
-{
+.Customer {
     margin: 5px;
     width: 100%;
     border: 1px solid #8264b3;
     display: flex;
+    position: relative;
 }
-#ClientName, #address, #PhoneNumber, #TourName
-{
+
+.Customer::before {
+    content: "Số lượng đoàn khách";
+    position: absolute;
+    top: -12px;
+    left: 10px;
+    z-index: 1;
+}
+
+#ClientName,
+#address,
+#PhoneNumber,
+#TourName {
     width: 60%;
 }
-.Number-customer td
-{
-    border: none ;
+.Number-customer td {
+    border: none;
 }
-#Adult, #Child 
-{
+#Adult,
+#Child {
     margin: 10px;
     width: 10%;
 }
-#Note
-{
+#Note {
     width: 100%;
     padding: 60px 0;
     margin-right: 0px 0;
 }
-.Register
-{
+.Register {
     text-align: center;
     border-radius: 1px;
     border: 1px solid;
@@ -64,5 +68,3 @@ table
     line-height: 20px;
     margin: 4px 0;
 }
-
-
