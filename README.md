@@ -28,6 +28,6 @@
 
 ### Assignment 2: Lập trình web với Javascript và JQuery
   - Thư mục: [Lab 02.](/Lab_02)
-  - [Website thực hiện chức năng tính tiền.](https://ducducqn123.github.io/Pay-for-food-in-a-restaurant/)
+  - Demo: [Website thực hiện chức năng tính tiền.](https://ducducqn123.github.io/Pay-for-food-in-a-restaurant/)
 <!-- Footer -->
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`Copyright © 2021 - Đỗ Trọng Khánh`
