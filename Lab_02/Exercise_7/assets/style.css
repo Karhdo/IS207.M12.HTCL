@@ -1,0 +1,59 @@
+/* CSS of Cau7_BTTH_2 */
+
+table,
+th,
+td {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    font-size: 18px;
+    padding: 8px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 15px;
+    margin: 0;
+    font-weight: 600;
+    padding: 5px 0;
+}
+
+#form__CV {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.tbl__CV {
+    width: 45%;
+}
+
+/* .avatar__img{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+}
+
+#imgshow{
+    width: 100%;
+    height: 100%;
+} */
+
+.tbl_skillCV {
+    width: 90%;
+}
+
+.add-skill {
+    cursor: pointer;
+    font-size: 16px;
+    color: rgb(122, 18, 122);
+}
+
+.add-skill:hover {
+    opacity: 0.6;
+}
+
+.btn-subscribe {
+    padding: 0 20px;
+    cursor: pointer;
+}

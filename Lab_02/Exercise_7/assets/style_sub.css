@@ -1,0 +1,65 @@
+/* CSS of Cau7_BTTH_2_sub */
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+.CV__sample {
+    margin-top: 50px;
+    width: 25%;
+    border: 5px solid #ccc;
+    padding: 15px;
+}
+
+i {
+    color: rgb(3, 168, 172);
+}
+
+p {
+    opacity: 0.8;
+}
+
+.avatar__img {
+    width: 100%;
+}
+
+#image__CV {
+    width: 100%;
+}
+
+.list__info {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 16px;
+}
+
+.list__info p {
+    display: inline-block;
+    margin: 8px 15px;
+    font-size: 16px;
+}
+
+.list__skill h3 {
+    font-size: 18px;
+    font-weight: 600;
+    display: inline-block;
+    margin: 24px 15px 0;
+}
+
+.gray-bar {
+    width: 100%;
+    height: 17px;
+    background-color: rgb(237, 237, 237);
+    border-radius: 20px;
+}
+
+.green-bar {
+    height: 17px;
+    background-color: rgb(3, 168, 172);
+    border-radius: 20px;
+}
+
+.green-bar p {
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
