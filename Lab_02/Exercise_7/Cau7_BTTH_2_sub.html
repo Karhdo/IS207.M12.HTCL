@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/css/style_sub.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+            integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <title>Document</title>
+        <script>
+            $(document).ready(function () {
+                $(".name").html(localStorage.getItem("name"));
+                $(".job").html(localStorage.getItem("job"));
+                $(".address").html(localStorage.getItem("address"));
+                $(".email").html(localStorage.getItem("email"));
+                $(".tel").html(localStorage.getItem("telephone"));
+
+                var linkImageCV = localStorage.getItem("imgData");
+                ImageCV = $("#image__CV").get(0);
+                ImageCV.src = "data:image/png;base64," + linkImageCV;
+
+                var arrSkill = JSON.parse(localStorage.getItem("arrSkill") || "[]");
+                var str = "";
+
+                arrSkill.forEach(addSkill);
+
+                function addSkill(item) {
+                    var nameSkill = item["nameSkill"];
+                    var widthRange = item["rangeSkill"];
+
+                    str += `<div><p>${nameSkill}</p>`;
+                    str += `<div class='gray-bar'><div class='green-bar' style = 'width: ${widthRange}%'><p>${widthRange}%</p></div></div></div>`;
+                }
+
+                $(".list__skill").append(str);
+            });
+        </script>
+
+        <style></style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="CV__sample">
+                <div class="list__info">
+                    <div class="avatar__img"><img src="" id="image__CV" /></div>
+                    <h2 class="name"></h2>
+                    <div>
+                        <i class="fas fa-briefcase"></i>
+                        <p class="job"></p>
+                    </div>
+    
+                    <div>
+                        <i class="fas fa-home"></i>
+                        <p class="address"></p>
+                    </div>
+    
+                    <div>
+                        <i class="fas fa-envelope"></i>
+                        <p class="email"></p>
+                    </div>
+    
+                    <div>
+                        <!-- <i class="ti-mobile"></i> -->
+                        <i class="fas fa-phone"></i>
+                        <p class="tel"></p>
+                    </div>
+                </div>
+    
+                <div class="list__skill">
+                    <i class="fas fa-asterisk"></i>
+                    <h3>Kỹ năng</h3>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

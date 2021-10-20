@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Câu 7</title>
+        <script>
+            $(document).ready(function () {
+                // var rangeSkillCV = $("#skill__range").value;
+
+                $('input[type = "file"]').on("change", function () {
+                    if ($(this)[0].files && $(this)[0].files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            $("#imgshow").attr("src", e.target.result);
+                        };
+                        reader.readAsDataURL($(this)[0].files[0]);
+                    }
+
+                    $("#imgshow").show();
+                });
+
+                // Xử lý sự kiện thêm kỹ năng
+                $(".add-skill").click(function () {
+                    var str = "<table class='tbl_skillCV'>";
+                    str += "<tr><td>Tên kỹ năng</td><td><input type='text' class='skill__name' placeholder='Node JS' required /></td></tr>";
+                    str += "<tr><td>Mức độ</td><td><input type='range' class='skill__range' min='0' max='100' step='10' /></td></tr></table>";
+                    $(this).before(str);
+                });
+
+                function getBase64Image(img) {
+                    var canvas = document.createElement("canvas");
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+
+                    var ctx = canvas.getContext("2d");
+                    ctx.drawImage(img, 0, 0);
+
+                    var dataURL = canvas.toDataURL("image/png");
+
+                    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+                }
+
+                // Xử lý sự kiện đăng ký
+                $(".btn-subscribe").click(function () {
+                    var arrSkillCV = [];
+                    var nameCV = $("#CV__name").val();
+                    var addressCV = $("#CV__address").val();
+                    var telCV = $("#CV__tel").val();
+                    var emailCV = $("#CV__email").val();
+                    var jobCV = $("#CV__job").val();
+
+                    $(".tbl_skillCV").each(function () {
+                        arrSkillCV.push({
+                            nameSkill: $(this).find(".skill__name").val(),
+                            rangeSkill: $(this).find(".skill__range").val(),
+                        });
+                    });
+
+                    var linkImage = $("#imgshow").get(0);
+                    imgData = getBase64Image(linkImage);
+
+                    localStorage.setItem("imgData", imgData);
+                    localStorage.setItem("name", nameCV);
+                    localStorage.setItem("address", addressCV);
+                    localStorage.setItem("telephone", telCV);
+                    localStorage.setItem("email", emailCV);
+                    localStorage.setItem("job", jobCV);
+                    localStorage.setItem("arrSkill", JSON.stringify(arrSkillCV));
+                    window.location.href = "./Cau7_BTTH_2_sub.html";
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="form__CV">
+            <table class="tbl__CV">
+                <tr align="center">
+                    <td colspan="2">Đăng ký CV</td>
+                </tr>
+
+                <tr>
+                    <td>Họ và tên</td>
+                    <td>
+                        <input type="text" id="CV__name" placeholder="Nguyễn Văn C" required />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Địa chỉ</td>
+                    <td>
+                        <input type="text" id="CV__address" placeholder="TP.HCM" required />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Điện thoại</td>
+                    <td>
+                        <input type="tel" id="CV__tel" pattern="[0-9]{10}" placeholder="0900000000" required />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        <input type="email" id="CV__email" placeholder="ex@gmail.com" required />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Nghề nghiệp</td>
+                    <td>
+                        <input type="text" id="CV__job" placeholder="Designer" required />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Ảnh đại diện</td>
+                    <td>
+                        <input type="file" id="CV__avatar" />
+                        <div class="avatar__img"><img src="#" id="imgshow" hidden /></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Kỹ năng</td>
+                    <td>
+                        <table class="tbl_skillCV">
+                            <tr>
+                                <td>Tên kỹ năng</td>
+                                <td><input type="text" class="skill__name" placeholder="Node JS" required /></td>
+                            </tr>
+                            <tr>
+                                <td>Mức độ</td>
+                                <td><input type="range" class="skill__range" min="0" max="100" step="10" /></td>
+                            </tr>
+                        </table>
+                        <p class="add-skill">Thêm</p>
+                    </td>
+                </tr>
+
+                <tr align="center">
+                    <td colspan="2">
+                        <button class="btn-subscribe"><p>Đăng ký</p></button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
