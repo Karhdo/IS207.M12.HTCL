@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./main.css" />
+        <title>Document</title>
+        <body>
+            <div class="container">
+                <div class="row">
+                    <div class="intro col-12">
+                        <h1>Work To-Dos</h1>
+                        <div>
+                            <div class="border1"></div>
+                            <div c
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="helpText col-12">
+                        <p id="first">Enter text into the input field to add items to your list.</p>
+                        <p id="second">Click the item to mark it as complete.</p>
+                        <p id="third">Click the "X" to remove the item from your list.</p>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-12">
+                        <input id="userInput" type="text" placeholder="New item..." maxlength="50">
+                        <button id="enter"><i class="fas fa-pencil-alt"></i></button>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="listItems col-12">
+                        <ul class="col-12 offset-0 col-sm-8 offset-sm-2">
+                        </ul>
+                    </div>
+                </div>
+        
+            </div>
+            <script>
+                var input = document.getElementById("userInput");
+                function createList() {
+                    var li = document.createElement("li"); 
+                    li.appendChild(document.createTextNode(input.value)); 
+                    document.querySelector("ul").appendChild(li);
+                    function crossOut() {
+                        li.classList.toggle("done");
+                    }
+                    li.addEventListener("click",crossOut);
+                    var del = document.createElement("button");
+                    del.appendChild(document.createTextNode("X"));
+                    li.appendChild(del);
+                    del.addEventListener("click", deleteListItem);
+
+                    function deleteListItem(){
+                        li.classList.add("delete")
+                    }
+                }
+                
+                function addList(event) {
+                    if (input.value.length > 0 && event.which == 13) 
+                    { 
+                        createList();
+                    } 
+                }
+                input.addEventListener("keypress", addList);            
+            </script>
+        </body>
+</html>
