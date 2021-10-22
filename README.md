@@ -8,11 +8,11 @@
 <h1 align="center"><b>PHÁT TRIỂN ỨNG DỤNG WEB</b></h>
 
 ## THÀNH VIÊN NHÓM
-| STT    | MSSV          | Họ và Tên                 |Chức Vụ    | Github                                                  | Email                   |
-| ------ |:-------------:| -------------------------:|----------:|--------------------------------------------------------:|-------------------------:
-| 1      | 19521676      | Đỗ Trọng Khánh            |Nhóm trưởng|[trong-khanh-1109](https://github.com/trong-khanh-1109)  |19521676@gm.uit.edu.vn   |
-| 2      | 19521383      | Võ Phạm Duy Đức           |Thành viên |[ducducqn123](https://github.com/ducducqn123)            |19521383@gm.uit.edu.vn   |
-| 3      | 19521699      | Phạm Anh Khoa             |Thành viên |[khoaphamj1505](https://github.com/khoaphamj1505)        |19521699@gm.uit.edu.vn   |
+|STT| MSSV      | Họ và Tên       |Chức Vụ    | Github                                                  | Email                   |
+|---|:---------:| ---------------:|----------:|--------------------------------------------------------:|-------------------------:
+| 1 | 19521676  | Đỗ Trọng Khánh  |Nhóm trưởng|[trong-khanh-1109](https://github.com/trong-khanh-1109)  |19521676@gm.uit.edu.vn   |
+| 2 | 19521383  | Võ Phạm Duy Đức |Thành viên |[ducducqn123](https://github.com/ducducqn123)            |19521383@gm.uit.edu.vn   |
+| 3 | 19521699  | Phạm Anh Khoa   |Thành viên |[khoaphamj1505](https://github.com/khoaphamj1505)        |19521699@gm.uit.edu.vn   |
 
 ## GIỚI THIỆU MÔN HỌC
 * **Tên môn học:** Phát triển ứng dụng Web
