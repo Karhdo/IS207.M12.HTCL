@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+            integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="./asset/css/style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Câu 2 Bài tập làm thêm</title>
+        <script>
+            $(document).ready(function () {
+                var stt_left = 0,
+                    stt_right = 4;
+                    arr = {
+                        left: stt_left,
+                        right: stt_right,
+                    }
+                // tự động chuyển slide
+                function auto(arr) {
+                    var thoigian = setInterval(function () {
+                        if (++arr["right"] <= 9) {
+                            $(".slide").eq(arr["left"]).hide();
+                            $("p").eq(arr["left"]).hide();
+                            $(".slide").eq(arr["right"]).show();
+                            $("p").eq(arr["right"]).show();
+                            arr["left"]++;
+                        } else {
+                            arr["right"] = 9;
+                        }
+                    }, 3000);
+                }
+
+                auto(arr);
+
+                $(".btn-change-right").click(function () {
+                    if (++arr["right"] <= 9) {
+                        $(".slide").eq(arr["left"]).hide();
+                        $("p").eq(arr["left"]).hide();
+                        $(".slide").eq(arr["right"]).show();
+                        $("p").eq(arr["right"]).show();
+                        arr["left"]++;
+                    } else {
+                        arr["right"] = 9;
+                    }
+                });
+
+                $(".btn-change-left").click(function () {
+                    if (--arr["left"] >= 0) {
+                        $(".slide").eq(arr["right"]).hide();
+                        $("p").eq(arr["right"]).hide();
+                        $(".slide").eq(arr["left"]).show();
+                        $("p").eq(arr["left"]).show();
+                        arr["right"]--;
+                    } else {
+                        arr["left"] = 0;
+                    }
+                });
+
+                // $(".btn-change-left").click(function () {
+                //     if (++stt_right <= 9) {
+                //         $(".slide").eq(stt_left).hide();
+                //         $("p").eq(stt_left).hide();
+                //         $(".slide").eq(stt_right).show();
+                //         $("p").eq(stt_right).show();
+                //         stt_left++;
+                //     } else {
+                //         stt_right = 9;
+                //     }
+                //     arr["left"] = stt_left;
+                //     arr["right"] = stt_right;
+                // });
+
+                // $(".btn-change-right").click(function () {
+                //     if (--stt_left >= 0) {
+                //         $(".slide").eq(stt_right).hide();
+                //         $("p").eq(stt_right).hide();
+                //         $(".slide").eq(stt_left).show();
+                //         $("p").eq(stt_left).show();
+                //         stt_right--;
+                //     } else {
+                //         stt_left = 0;
+                //     }
+                //     arr["left"] = stt_left;
+                //     arr["right"] = stt_right;
+                // });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="list__image">
+                <div>
+                    <img src="./asset/image/dog_1.jpg" alt="Hình con chó 1" class="slide slide-1" />
+                    <p align="center">Ảnh 1</p>
+                </div>
+
+                <div>
+                    <img src="./asset/image/dog_2.jpg" alt="Hình con chó 2" class="slide slide-2" />
+                    <p align="center">Ảnh 2</p>
+                </div>
+
+                <div>
+                    <img src="./asset/image/dog_3.jpg" alt="Hình con chó 3" class="slide slide-3" />
+                    <p align="center">Ảnh 3</p>
+                </div>
+
+                <div>
+                    <img src="./asset/image/dog_4.jpg" alt="Hình con chó 4" class="slide slide-4" />
+                    <p align="center">Ảnh 4</p>
+                </div>
+
+                <div>
+                    <img src="./asset/image/dog_5.jpg" alt="Hình con chó 5" class="slide slide-5" />
+                    <p align="center">Ảnh 5</p>
+                </div>
+
+                <div>
+                    <img src="./asset/image/dog_6.jpg" alt="Hình con chó 6" class="slide slide-6" />
+                    <p align="center" hidden>Ảnh 6</p>
+                </div>
+
+                <div>
+                    <img src="./asset/image/dog_7.jpg" alt="Hình con chó 7" class="slide slide-7" />
+                    <p align="center" hidden>Ảnh 7</p>
+                </div>
+
+                <div>
+                    <img src="./asset/image/dog_8.jpg" alt="Hình con chó 8" class="slide slide-8" />
+                    <p align="center" hidden>Ảnh 8</p>
+                </div>
+
+                <div>
+                    <img src="./asset/image/dog_9.jpg" alt="Hình con chó 9" class="slide slide-9" />
+                    <p align="center" hidden>Ảnh 9</p>
+                </div>
+
+                <div>
+                    <img src="./asset/image/dog_10.jpg" alt="Hình con chó 10" class="slide slide-10" />
+                    <p align="center" hidden>Ảnh 10</p>
+                </div>
+            </div>
+
+            <div class="btn-change btn-change-left"><i class="icon-left fas fa-angle-double-left"></i></div>
+            <div class="btn-change btn-change-right"><i class="icon-right fas fa-angle-double-right"></i></div>
+        </div>
+    </body>
+</html>

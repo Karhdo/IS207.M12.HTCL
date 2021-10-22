@@ -1,0 +1,43 @@
+/*  */
+
+.container{
+    position: relative;
+    margin-top: 100px;
+}
+
+.list__image{
+    display: flex;
+    justify-content: center;
+}
+
+.slide{
+    margin: 5px;
+}
+
+.slide-6, .slide-7, .slide-8, .slide-9, .slide-10{
+    display: none;
+}
+
+.btn-change{
+    position: absolute;
+    width: 25px;
+    height: 50px;
+    background-color: yellow;
+    top: 35%;
+}
+
+.btn-change i{
+    position: absolute;
+    top: 37%;
+    left: 20%;
+}
+
+.btn-change-left{
+    left: 140px;
+}
+
+.btn-change-right{
+    right: 140px;
+}
+
+
