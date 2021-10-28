@@ -22,12 +22,14 @@
 * **Giảng viên**: ThS.Mai Xuân Hùng
 
 ## QUÁ TRÌNH
-### Assignment 1: Lập trình web tĩnh HTML5 và CSS3
+### Assignment 1: Lập trình web tĩnh HTML5 và CSS3.
   - Thư mục: [Lab 01.](/Lab_01)
   - Demo: [Web Nature Tour.](https://ducducqn123.github.io/Web-Nature-Tour/)
 
-### Assignment 2: Lập trình web với Javascript và JQuery
+### Assignment 2: Lập trình web với Javascript và JQuery.
   - Thư mục: [Lab 02.](/Lab_02)
   - Demo: [Website thực hiện chức năng tính tiền.](https://ducducqn123.github.io/Pay-for-food-in-a-restaurant/)
+
+### Assignment 3: Ngôn ngữ lập trình PHP.
 <!-- Footer -->
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`Copyright © 2021 - Đỗ Trọng Khánh`
