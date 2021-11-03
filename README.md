@@ -31,5 +31,7 @@
   - Demo: [Website thực hiện chức năng tính tiền.](https://ducducqn123.github.io/Pay-for-food-in-a-restaurant/)
 
 ### Assignment 3: Ngôn ngữ lập trình PHP.
+  - Thư mục: [Lab 03.](/Lab_03)
+ 
 <!-- Footer -->
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`Copyright © 2021 - Đỗ Trọng Khánh`
