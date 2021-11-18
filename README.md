@@ -34,5 +34,6 @@
   - Thư mục: [Lab 03.](/Lab_03)
 
 ### Assignment 4: Lập trình PHP với MySQL.
+  - Thư mục: [Lab 04.](/Lab_04)
 <!-- Footer -->
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`Copyright © 2021 - Đỗ Trọng Khánh`
