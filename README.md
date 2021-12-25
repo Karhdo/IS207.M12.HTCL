@@ -21,19 +21,24 @@
 * **Năm học:** HK1 (2021 - 2022)
 * **Giảng viên**: ThS.Mai Xuân Hùng
 
-## QUÁ TRÌNH
+## THỰC HÀNH
 ### Assignment 1: Lập trình web tĩnh HTML5 và CSS3.
-  - Thư mục: [Lab 01.](/Lab_01)
+  - Thư mục: [Lab 01.](/Practice/Lab_01)
   - Demo: [Web Nature Tour.](https://ducducqn123.github.io/Web-Nature-Tour/)
 
 ### Assignment 2: Lập trình web với Javascript và JQuery.
-  - Thư mục: [Lab 02.](/Lab_02)
+  - Thư mục: [Lab 02.](/Practice/Lab_02)
   - Demo: [Website thực hiện chức năng tính tiền.](https://ducducqn123.github.io/Pay-for-food-in-a-restaurant/)
 
 ### Assignment 3: Ngôn ngữ lập trình PHP.
-  - Thư mục: [Lab 03.](/Lab_03)
+  - Thư mục: [Lab 03.](/Practice/Lab_03)
 
 ### Assignment 4: Lập trình PHP với MySQL.
-  - Thư mục: [Lab 04.](/Lab_04)
+  - Thư mục: [Lab 04.](/Practice/Lab_04)
+
+### Assignment 5: Kỹ thuật lập trình Ajax.
+  - Thư mục: [Lab 05.](/Practice/Lab_05)
+
+## ĐỒ ÁN CUỐI KÌ
 <!-- Footer -->
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;`Copyright © 2021 - Đỗ Trọng Khánh`
