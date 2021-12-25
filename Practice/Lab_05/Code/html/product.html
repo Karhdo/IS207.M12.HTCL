@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Document</title>
+    </head>
+    <style>
+        .main__products {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            margin: 8px;
+        }
+
+        .product__img img {
+            width: 300px;
+            height: 300px;
+        }
+
+        .product__info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product__info span {
+            display: block;
+        }
+
+        .product__qnt input {
+            width: 30px;
+        }
+    </style>
+    <body>
+        <div class="main">
+            <select name="" id="main__select-box">
+                <option value="">Chọn sản phẩm</option>
+                <option value="all">Chọn tất cả sản phẩm</option>
+                <option value="but">Chọn sản phẩm bút</option>
+                <option value="phan">Chọn sản phẩm phấn</option>
+                <option value="bang">Chọn sản phẩm bảng</option>
+                <option value="tap">Chọn sản phẩm tập</option>
+            </select>
+            <a href="./../html/my_cart.html" class="main__cart">Số lượng sản phẩm trong giỏ hàng: <span class="main__cart-qnt">0</span></a>
+            <div class="main__products"></div>
+        </div>
+    </body>
+    <script>
+        $("#main__select-box").change(function () {
+            const typeProduct = $(this).val();
+            $.get(`./../PHP/get_product.php?typeProduct=${typeProduct}`, (data, status) => {
+                if (status == "success") {
+                    $(".main__products").html(data);
+                }
+            });
+        });
+
+        $(document).on("click", ".product__btn-add", function () {
+            const productId = $(this).attr("masp");
+            const productQnt = $(this).parent().children(".product__qnt-input").val();
+
+            $.get(`./../PHP/cart_product.php?productId=${productId}&productQnt=${productQnt}`, (data, status) => {
+                if (status == "success") {
+                    $(".main__cart-qnt").html(data);
+                }
+            });
+        });
+    </script>
+</html>

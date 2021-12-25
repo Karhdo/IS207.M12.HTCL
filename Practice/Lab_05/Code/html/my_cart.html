@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <style>
+        .main__header {
+            font-size: 24px;
+            margin-left: 250px;
+            margin-bottom: 12px;
+        }
+
+        .main__table table,
+        .main__table th,
+        .main__table td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .main__table td {
+            text-align: center;
+        }
+
+        .product-name img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .product-qnt input {
+            text-align: center;
+            width: 40px;
+        }
+
+        .total-money-product {
+            margin-left: 500px;
+        }
+
+        .main__link {
+            display: flex;
+        }
+
+        .link__back {
+            display: block;
+            text-decoration: none;
+            background-color: #fbab33;
+            color: #fff;
+            width: 150px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .link__payment {
+            display: block;
+            margin-left: 350px;
+            text-decoration: none;
+            background-color: #00b33c;
+            color: #fff;
+            width: 150px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 4px;
+        }
+    </style>
+    <body>
+        <div class="main">
+            <header class="main__header">QUẢN LÝ GIỎ HÀNG</header>
+            <div class="main__table">
+                <table style="width: 50%">
+                    <tr>
+                        <th>Tên sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                        <th></th>
+                    </tr>
+                </table>
+            </div>
+            <div class="total-money-product">Tổng tiền: <span></span></div>
+            <div class="main__link">
+                <a href="./../html/product.html" class="link__back">Tiếp tục mua hàng</a>
+                <a href="./../html/payment.html" class="link__payment">Thanh toán</a>
+            </div>
+        </div>
+    </body>
+    <script>
+        $(document).ready(function () {
+            $.get(`./../PHP/my_cart.php`, (data, status) => {
+                data = data.split("|");
+                $(".main__table table tr:last").after(data[0]);
+                $(".total-money-product span").html(data[1]);
+            });
+        });
+
+        $(document).on("change", ".product-qnt input", function () {
+            let productPrice = $(this).parents("tr").find(".product-price").html();
+            $(this)
+                .parents("tr")
+                .find(".product-total")
+                .html(productPrice * $(this).val());
+
+            var totalMoneyProducts = 0;
+            $(".product-total").each(function () {
+                totalMoneyProducts += Number($(this).text());
+            });
+
+            $(".total-money-product span").html(totalMoneyProducts);
+
+            $.get(`./../PHP/change_qnt.php?productId=${$(this).attr("masp")}&productQnt=${$(this).val()}`);
+        });
+
+        $(document).on("click", ".product-del button", function () {
+            $(this).parents("tr").remove();
+            let totalMoney = Number($(this).parents("tr").find(".product-total").text()),
+                totalMoneyProducts = Number($(".total-money-product span").html());
+
+            $(".total-money-product span").html(totalMoneyProducts - totalMoney);
+
+            $.get(`./../PHP/product_del.php?productId=${$(this).attr("masp")}`);
+        });
+    </script>
+</html>

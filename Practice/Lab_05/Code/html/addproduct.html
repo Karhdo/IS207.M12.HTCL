@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Document</title>
+    </head>
+    <style>
+        .main__header {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .main__row__input {
+            margin-bottom: 8px;
+        }
+
+        .main__row__input input {
+            width: 500px;
+            height: 25px;
+            font-size: 20px;
+        }
+
+        .main__btn-add {
+            background-color: #00679e;
+            width: 100px;
+            height: 30px;
+            color: white;
+            border: 1px solid #ccc;
+            margin-left: 24px;
+            border-radius: 8px;
+        }
+
+        .main__btn-reset {
+            background-color: #989a0e;
+            width: 100px;
+            height: 30px;
+            color: white;
+            border: 1px solid #ccc;
+            margin-left: 24px;
+            border-radius: 8px;
+        }
+    </style>
+    <body>
+        <div class="main">
+            <header class="main__header">Thêm Sản Phẩm</header>
+            <form action="frm" method="GET">
+                <div class="main__row">
+                    <div class="main__row__name">Mã sản phẩm</div>
+                    <div class="main__row__input">
+                        <input type="text" name="id" />
+                    </div>
+                </div>
+                <div class="main__row">
+                    <div class="main__row__name">Tên sản phẩm</div>
+                    <div class="main__row__input">
+                        <input type="text" name="name-product" />
+                    </div>
+                </div>
+                <div class="main__row">
+                    <div class="main__row__name">Nước sản xuất</div>
+                    <div class="main__row__input">
+                        <input type="text" name="country-of-production" />
+                    </div>
+                </div>
+                <div class="main__row">
+                    <div class="main__row__name">Đơn vị tính</div>
+                    <div class="main__row__input">
+                        <input type="text" name="unit" />
+                    </div>
+                </div>
+                <div class="main__row">
+                    <div class="main__row__name">Giá</div>
+                    <div class="main__row__input">
+                        <input type="text" name="price" />
+                    </div>
+                </div>
+                <div class="main__row">
+                    <div class="main__row__name">Loại sản phẩm</div>
+                    <div class="main__row__input">
+                        <input type="text" name="type" />
+                    </div>
+                </div>
+                <div class="main__row">
+                    <div class="main__row__name">Hình ảnh</div>
+                    <div class="main__row__input">
+                        <input type="text" name="link-image" />
+                    </div>
+                </div>
+                <div class="main__btn">
+                    <input type="button" value="Thêm" class="main__btn-add" />
+                    <input type="button" value="Reset" class="main__btn-reset" />
+                </div>
+            </form>
+        </div>
+    </body>
+    <script>
+        $(".main__btn-add").click(function () {
+            const idProduct = $("input[name='id']").val(),
+                nameProduct = $("input[name='name-product']").val(),
+                country = $("input[name='country-of-production']").val(),
+                unit = $("input[name='unit']").val(),
+                price = $("input[name='price']").val(),
+                type = $("input[name='type']").val(),
+                linkImage = $("input[name='link-image']").val();
+
+            $.get(`addproduct.php?idProduct=${idProduct}&nameProduct=${nameProduct}&country=${country}&unit=${unit}&price=${price}&type=${type}&linkImage=${linkImage}`, (data, status) => {
+                if (status == "success") {
+                    alert(data);
+                }
+            });
+        });
+
+        $(".main__btn-reset").click(function () {
+            $("input[name='id']").val("");
+            $("input[name='name-product']").val("");
+            $("input[name='country-of-production']").val("");
+            $("input[name='unit']").val("");
+            $("input[name='price']").val("");
+            $("input[name='type']").val("");
+            $("input[name='link-image']").val("");
+        });
+    </script>
+</html>

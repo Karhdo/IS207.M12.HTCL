@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <style>
+        .main {
+            display: flex;
+        }
+
+        .main__payment {
+            background: #f2f2f2;
+            width: 70%;
+        }
+
+        .main__info {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .deliver__header,
+        .receive__header {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .main__info__deliver,
+        .main__info__receive {
+            width: 50%;
+        }
+
+        .main__info__deliver input,
+        .main__info__receive input {
+            width: 90%;
+            height: 25px;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .main__btn {
+            text-align: center;
+        }
+
+        .main__btn button {
+            width: 90%;
+            margin: 0 auto;
+            height: 30px;
+            background-color: #00b341;
+            color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .main__product {
+            background: #f2f2f2;
+            width: 30%;
+            margin-left: 30px;
+        }
+
+        .main__product table {
+            width: 100%;
+        }
+
+        .main__product__total-money {
+            margin-top: 50px;
+        }
+    </style>
+    <body>
+        <div class="main">
+            <div class="main__payment">
+                <div class="main__info">
+                    <div class="main__info__deliver">
+                        <header class="deliver__header">Thông tin giao hàng</header>
+                        Họ tên <br />
+                        <input type="text" class="deliver__name" /> <br />
+                        Số điện thoại <br />
+                        <input type="text" class="deliver__phone-number" /> <br />
+                        Email <br />
+                        <input type="text" class="deliver__email" /> <br />
+                    </div>
+                    <div class="main__info__receive">
+                        <header class="receive__header">Thông tin nhận hàng</header>
+                        Địa chỉ nhận hàng <br />
+                        <input type="text" class="receive__address" /> <br />
+                        Tỉnh/ Thành phố <br />
+                        <input type="text" class="receive__city" /> <br />
+                        Quận/ Huyện <br />
+                        <input type="text" class="receive__district" /> <br />
+                        Phường xã <br />
+                        <input type="text" class="receive__commune" /> <br />
+                    </div>
+                </div>
+                <div class="main__btn">
+                    <button>Thanh toán</button>
+                </div>
+            </div>
+            <div class="main__product">
+                <table>
+                    <tr>
+                        <td>SP</td>
+                        <td>SL</td>
+                        <td>Thanh tien</td>
+                    </tr>
+                </table>
+                <div class="main__product__total-money">Tông tiền <span></span></div>
+            </div>
+        </div>
+    </body>
+    <script>
+        $(document).ready(function () {
+            $.get(`./../PHP/payment_product.php`, (data, status) => {
+                data = data.split("|");
+                $(".main__product table tr:last").after(data[0]);
+                $(".main__product__total-money span").html(data[1]);
+            });
+        });
+
+        $(".main__btn button").click(function () {
+            let name = $(".deliver__name").val(),
+                phoneNumber = $(".deliver__phone-number").val(),
+                email = $(".deliver__email").val(),
+                address = $(".receive__address").val(),
+                city = $(".receive__city").val(),
+                district = $(".receive__district").val(),
+                commune = $(".receive__commune").val();
+
+            $.get(`./../PHP/payment.php?name=${name}&phoneNumber=${phoneNumber}&email=${email}&address=${address}&city=${city}&district=${district}&commune=${commune}`, (data, status) => {
+                if (status == "success") {
+                    alert(data);
+                    window.location = "http://localhost:8080/Lab_05/html/product.html";
+                }
+            });
+        });
+    </script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Document</title>
+    </head>
+    <style>
+        .main {
+            display: flex;
+            justify-content: center;
+        }
+
+        .layout__form {
+            text-align: center;
+        }
+
+        .layout__form h3 {
+            text-align: left;
+        }
+
+        .form__btn {
+            margin: 12px auto;
+            width: 100px;
+            height: 25px;
+            color: white;
+            background-color: rgb(55, 123, 212);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .layout__noti {
+            text-align: center;
+            color: blue;
+        }
+    </style>
+    <body>
+        <div class="main">
+            <div class="layout">
+                <h1>Login</h1>
+                <div class="layout__form">
+                    <form action="frm" method="GET">
+                        <h3>UserName</h3>
+                        <input type="text" class="form__user" placeholder="Tên đăng nhập" />
+                        <h3>Password</h3>
+                        <input type="password" class="form__password" placeholder="Mật khẩu" /><br /><br />
+                        <input type="button" class="form__btn" value="Login" name="login" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="layout__noti"></div>
+    </body>
+    <script>
+        $(".form__btn").click(function () {
+            const userName = $(".form__user").val();
+            const password = $(".form__password").val();
+            $.get(`./PHP/loginBT.php?userName=${userName}&password=${password}`, (data, status) => {
+                if (status == "success") {
+                    $(".layout__noti").html(data);
+                    if (data == "Chúc mừng bạn bạn đã đăng nhập thành công!!!") {
+                        window.location = "http://localhost:8080/Lab_05/html/product.html";
+                    }
+                }
+            });
+        });
+    </script>
+</html>
