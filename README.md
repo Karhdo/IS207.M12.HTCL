@@ -42,6 +42,7 @@
 ## ĐỒ ÁN CUỐI KÌ
 - Front-end: HTML, CSS, Javascript, VueJS, Laravel.
 - Back-end: Laravel, MySQL.
+- File report: [Final Report.](Final_Project/Final_Report.pdf)
 - Source Code and Installation Instructions: [Source Code](https://github.com/ducducqn123/Website-Selling-Food)
 <p align='center'><img style="height: 800px" src="https://github.com/ducducqn123/Website-Selling-Food/blob/ce4ab91b045d777d82beee1935e5df8eed736797/demo.png"></p>
 
